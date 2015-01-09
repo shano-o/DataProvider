@@ -1,7 +1,9 @@
 <?php
 namespace Psc\DataProvider;
 
-interface RepositoryInterface
+use Zend\EventManager\EventManagerAwareInterface;
+
+interface RepositoryInterface extends EventManagerAwareInterface
 {
     public function setModel(Model $model);
 
@@ -22,8 +24,6 @@ interface RepositoryInterface
     public function setAdapter(Adapter $adapter);
 
     public function getAdapter();
-
-    public function setResultSet(ResultSet $rs);
 
     public function getResultSet();
 
